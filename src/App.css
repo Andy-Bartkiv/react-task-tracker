@@ -1,38 +1,121 @@
+* {
+	margin: 0;  padding: 0;
+  box-sizing: border-box;
+}
+
+#root{
+  display: flex;
+  justify-content: center;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+  font-size: calc(10px + 2vmin);
+  background-color: #282c34;
+}
+
 .App {
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+  padding: 1em;
+  background-color: #282c34;
+  color: whitesmoke;
+  border: .1em solid teal;
+  border-radius: .5em;
+}
+
+h1, h2, h3 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: .5em;
 }
 
-.App-link {
-  color: #61dafb;
+.btn {
+  display: inline-block;
+  background: whitesmoke;
+  color: #282c44;
+  border: none;
+  padding: .25em .5em;
+  margin: .1em;
+  border-radius: .25em;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: .75em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:focus { outline: none; } 
+
+.btn:active { transform: scale(.98); }
+
+.btn-block { display: block; width: 100%;}
+
+.task {
+  background: #f4f4f4;
+  margin: .1em;
+  padding: .25em .5em;
+  cursor: pointer;
 }
+
+.task.reminder { border-left: .1em solid green; }
+
+.task h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-form { margin-bottom: 2em; }
+
+.form-control { margin: 1em; }
+
+.form-control label { display: block; }
+
+.form-control input {
+  width: 100%;
+  height: 2em;
+  margin: .25em;
+  padding: .25em;
+  font-size: 1.25em;
+}
+
+.form-control-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-control-check label { flex: 1;}
+
+.form-control-check input { flex: 2; height: 1em; }
+
+footer {
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+/* .App-header {
+  padding: .5em 0;
+  background-color: #282c44;
+  color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: .1em solid orange;
+  border-radius: 1em;
+  margin-bottom: .5em;
+} */
+
+/* .App-body {
+  padding: 0 1em;
+} */
+
+
+/* input {
+  margin-bottom: 0.5em;
+} */
