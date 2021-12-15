@@ -15,7 +15,7 @@ body {
 }
 
 .App {
-  width: 100%;
+  width: 80%;
   min-height: 100vh;
   overflow: auto;
   padding: 1em;
@@ -23,10 +23,6 @@ body {
   color: whitesmoke;
   border: .1em solid teal;
   border-radius: .5em;
-}
-
-h1, h2, h3 {
-  text-align: center;
 }
 
 .header {
@@ -57,8 +53,10 @@ h1, h2, h3 {
 
 .task {
   background: #f4f4f4;
-  margin: .1em;
-  padding: .25em .5em;
+  background-color: #383c44;
+  margin: .35em 0;
+  padding: .25em;
+  padding-left: .85em;
   cursor: pointer;
 }
 

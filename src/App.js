@@ -1,10 +1,23 @@
 import './App.css';
 import Header from './components/Header';
+import Tasks from './components/Tasks';
+import arrayTasks from './arrayTasks';
+import { useState } from 'react';
 
 function App() {
+  const [tasks, setTasks] = useState(arrayTasks());
+  const deleteTask = (id) => {
+    setTasks(tasks.filter(task => 
+      task.id !== id))
+  } 
   return (
     <div className="App">
       <Header />
+      { tasks.length > 0
+        ? <Tasks tasks={ tasks } deleteTask = { deleteTask } />
+        : 'No Tasks to Display'
+      }
+      
     </div>
   );
 }
