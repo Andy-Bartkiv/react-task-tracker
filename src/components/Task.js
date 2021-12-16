@@ -8,7 +8,7 @@ const Task = ({ task, deleteTask, toggleReminder }) => {
         >
             <h3>
                 { task.text } 
-                <MdDeleteForever style={{ color: 'orange'}} onClick={ () => deleteTask(task.id) }/>
+                <MdDeleteForever onClick={ () => deleteTask(task.id) }/>
             </h3>
             <p>{ task.day }</p>
         </div>

@@ -45,6 +45,8 @@ body {
   font-size: .75em;
 }
 
+.btn:hover { box-shadow: 0 0 .5em .25em teal; } 
+
 .btn:focus { outline: none; } 
 
 .btn:active { transform: scale(.98); }
@@ -58,6 +60,7 @@ body {
   padding: .25em;
   padding-left: .85em;
   cursor: pointer;
+  user-select: none;
 }
 
 .task.reminder { border-left: .35em solid teal; }
@@ -68,18 +71,26 @@ body {
   justify-content: space-between;
 }
 
-.add-form { margin-bottom: 2em; }
+.task p {
+  color: #0bb;
+}
 
-.form-control { margin: 1em; }
+.task h3 >* { color: #0aa;}
+.task h3 >*:hover { color: orange; }
 
-.form-control label { display: block; }
+.add-form { margin-bottom: .25em; }
+
+.form-control { margin: .25em 0; }
+
+/* .form-control label { display: block; } */
 
 .form-control input {
   width: 100%;
-  height: 2em;
-  margin: .25em;
+  /* height: 1.5em; */
+  margin: .125em;
   padding: .25em;
-  font-size: 1.25em;
+  font-size: .75em;
+  background: whitesmoke;
 }
 
 .form-control-check {
@@ -88,7 +99,7 @@ body {
   justify-content: space-between;
 }
 
-.form-control-check label { flex: 1;}
+.form-control-check label { flex: 1; font-size: .75em;}
 
 .form-control-check input { flex: 2; height: 1em; }
 
@@ -96,24 +107,3 @@ footer {
   margin-top: 1.5em;
   text-align: center;
 }
-
-/* .App-header {
-  padding: .5em 0;
-  background-color: #282c44;
-  color: orange;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: .1em solid orange;
-  border-radius: 1em;
-  margin-bottom: .5em;
-} */
-
-/* .App-body {
-  padding: 0 1em;
-} */
-
-
-/* input {
-  margin-bottom: 0.5em;
-} */

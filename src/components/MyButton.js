@@ -1,8 +1,9 @@
-const MyButton = ({ color, text }) => {
+const MyButton = ({ backgroundColor, color, text, onClick }) => {
     return (
         <button 
-            style = {{ backgroundColor: color }}
+            style = {{ backgroundColor: backgroundColor, color: color  }}
             className='btn'
+            onClick={ onClick }
         >
             { text }
         </button>
@@ -10,7 +11,8 @@ const MyButton = ({ color, text }) => {
 }
 
 MyButton.defaultProps = {
-    color: 'whitesmoke',
+    backgroundColor: 'whitesmoke',
+    color: 'black',
     text: '???'
 }
 
