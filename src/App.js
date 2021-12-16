@@ -6,8 +6,15 @@ import arrayTasks from './arrayTasks';
 import { useState } from 'react';
 
 function App() {
+  
   const [tasks, setTasks] = useState(arrayTasks());
   const [showInput, setShowInput] = useState(true);
+
+  const addTask = (task) => {
+    task.id = Date.now();
+    setTasks([...tasks, task])
+    console.log(task);
+  }
 
   const deleteTask = (id) => {
     setTasks(tasks.filter(task =>
@@ -28,7 +35,7 @@ function App() {
       />
       <hr style = { {margin: '.5em 0', background: 'teal', border: 'none', height: '.05em'} }/>
 
-      { (showInput) && <AddTaskForm /> }
+      { (showInput) && <AddTaskForm addTask = { addTask } /> }
 
       { tasks.length > 0
         ? <Tasks

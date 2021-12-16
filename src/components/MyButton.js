@@ -1,7 +1,7 @@
-const MyButton = ({ backgroundColor, color, text, onClick }) => {
+const MyButton = ({ backgroundColor, color, text, width, onClick }) => {
     return (
         <button 
-            style = {{ backgroundColor: backgroundColor, color: color  }}
+            style = {{ backgroundColor: backgroundColor, color: color, width: width }}
             className='btn'
             onClick={ onClick }
         >
@@ -13,7 +13,8 @@ const MyButton = ({ backgroundColor, color, text, onClick }) => {
 MyButton.defaultProps = {
     backgroundColor: 'whitesmoke',
     color: 'black',
-    text: '???'
+    text: '???',
+    width: 'auto'
 }
 
 export default MyButton

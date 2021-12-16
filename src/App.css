@@ -45,13 +45,14 @@ body {
   font-size: .75em;
 }
 
-.btn:hover { box-shadow: 0 0 .5em .25em teal; } 
-
-.btn:focus { outline: none; } 
-
+.btn:hover { outline: .125em solid orange; }
+/* .btn:focus { outline: none; }  */
 .btn:active { transform: scale(.98); }
 
-.btn-block { display: block; width: 100%;}
+.btn-block { 
+  display: block; 
+  width: 100%;
+}
 
 .task {
   background: #f4f4f4;
@@ -71,9 +72,7 @@ body {
   justify-content: space-between;
 }
 
-.task p {
-  color: #0bb;
-}
+.task p { color: #0bb; }
 
 .task h3 >* { color: #0aa;}
 .task h3 >*:hover { color: orange; }
@@ -87,9 +86,10 @@ body {
 .form-control input {
   width: 100%;
   /* height: 1.5em; */
-  margin: .125em;
+  margin: .125em 0;
   padding: .25em;
   font-size: .75em;
+  border-radius: .25em;
   background: whitesmoke;
 }
 
