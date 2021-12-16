@@ -7,6 +7,7 @@ const Footer = () => {
 
     return (
         <footer>
+            <hr style = { {margin: '.5em 0', background: 'teal', border: 'none', height: '.05em'} }/>
             <p>Copyright &copy; 2021</p>               
             <Link to={ link.to }>{ link.text }</Link>
         </footer>

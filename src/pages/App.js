@@ -1,27 +1,34 @@
 import { useState, useEffect } from 'react';
-import arrayTasks from '../data/arrayTasks';
+// import arrayTasks from '../data/arrayTasks';
 import Header from '../components/Header';
 import AddTaskForm from '../components/AddTaskForm';
 import Tasks from '../components/Tasks';
 import Footer from '../components/Footer';
+import Loader from '../components/loader/Loader'
+import { useFetch } from '../components/useFetch';
 
 function App() {
   
-  const [tasks, setTasks] = useState(arrayTasks());
+  const [tasks, setTasks] = useState([]);
   const [showInput, setShowInput] = useState(true);
 
-  useEffect( () => {
-    const getTasks = async () => {
-      const tasksFromServer = await fetchTasks();
-      setTasks(tasksFromServer);
-    }
-    getTasks();
-  }, []);
+  const [fetchTasks, isLoading, loadingError] = useFetch( async () => {
+    const response = await fetch('http://localhost:5000/tasks');
+    const data = await response.json();
+    setTasks(data);
+  });
 
-  const fetchTasks = async () => {
-    const res = await fetch('http://localhost:5000/tasks');
-    return await res.json();
-  };
+  useEffect( () => fetchTasks(), []);
+
+  // useEffect( () => getTasks(), [] );
+  // async function getTasks() {
+  //   const tasksFromServer = await fetchTasks();
+  //   setTasks(tasksFromServer);
+  // }
+  // async function fetchTasks() {
+  //   const res = await fetch('http://localhost:5000/tasks');
+  //   return await res.json();
+  // };
 
   const addTask = (task) => {
     task.id = Date.now();
@@ -51,6 +58,7 @@ function App() {
       <AddTaskForm show = { showInput } addTask = { addTask } />
 
       <Tasks
+        isLoading = { isLoading }
         tasks = { tasks }
         deleteTask = { deleteTask }
         toggleReminder = { toggleReminder }

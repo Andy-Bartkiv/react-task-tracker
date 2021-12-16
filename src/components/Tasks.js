@@ -1,8 +1,11 @@
 import Task from "./Task"
+import Loader from "./loader/Loader"
 
-const Tasks = ( { tasks, deleteTask, toggleReminder } ) => {
+const Tasks = ( { isLoading, tasks, deleteTask, toggleReminder } ) => {
     return (
-        <>
+        (isLoading)
+        ? <Loader />
+        : <>
             { (tasks.length > 0)
                 ? tasks.map((task) => (
                     <Task 

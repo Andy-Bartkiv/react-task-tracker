@@ -34,7 +34,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: .5em;
+  margin-bottom: .25em;
 }
 
 .btn {
@@ -111,7 +111,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-top: .5em;
+  margin-top: .25em;
   text-align: center;
 }
 
