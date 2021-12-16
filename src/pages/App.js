@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import arrayTasks from '../data/arrayTasks';
 import Header from '../components/Header';
 import AddTaskForm from '../components/AddTaskForm';
@@ -9,6 +9,19 @@ function App() {
   
   const [tasks, setTasks] = useState(arrayTasks());
   const [showInput, setShowInput] = useState(true);
+
+  useEffect( () => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks();
+      setTasks(tasksFromServer);
+    }
+    getTasks();
+  }, []);
+
+  const fetchTasks = async () => {
+    const res = await fetch('http://localhost:5000/tasks');
+    return await res.json();
+  };
 
   const addTask = (task) => {
     task.id = Date.now();
