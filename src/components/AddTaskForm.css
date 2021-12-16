@@ -1,0 +1,20 @@
+/* React Group Transitions */
+.form-enter {
+    opacity: 0.25;
+    transform: scale(0);
+    transition: all 500ms ease-in;
+  }
+  .form-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 500ms ease-in;
+  }
+  .form-exit {
+    opacity: 1;
+    transition: all 500ms ease-in;
+  }
+  .form-exit-active {
+    opacity: 0.25;
+    transform: scale(0);
+    transition: all 500ms ease-in;
+  }

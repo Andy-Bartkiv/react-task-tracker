@@ -30,12 +30,14 @@ function App() {
   return (
     <div className="App">
       <Header 
+        style={{ zIndex: 100 }}
         btnLabel={!showInput }
         onBtnClick={ () => setShowInput(!showInput) } 
       />
       <hr style = { {margin: '.5em 0', background: 'teal', border: 'none', height: '.05em'} }/>
 
-      { (showInput) && <AddTaskForm addTask = { addTask } /> }
+      {/* { (showInput) && <AddTaskForm addTask = { addTask } /> } */}
+      <AddTaskForm show = { showInput } addTask = { addTask } />
 
       { tasks.length > 0
         ? <Tasks
