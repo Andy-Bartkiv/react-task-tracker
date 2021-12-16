@@ -2,7 +2,7 @@ import { useState } from "react"
 import MyButton from './MyButton'
 import { TransitionGroup as AnimationContainer } from "react-transition-group";
 import { CSSTransition as AnimatedElement} from "react-transition-group";
-import './AddTaskForm.css'
+import '../styles/AddTaskForm.css';
 
 const AddTaskForm = ({ show, addTask }) => {
 

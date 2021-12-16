@@ -1,6 +1,5 @@
-import Header from "./Header"
-import '../App.css';
-import Footer from "./Footer";
+import Header from "../components/Header"
+import Footer from "../components/Footer";
 
 const About = () => {
     return (

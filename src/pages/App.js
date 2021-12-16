@@ -1,10 +1,9 @@
-import './App.css';
 import { useState } from 'react';
-import Header from './components/Header';
-import AddTaskForm from './components/AddTaskForm';
-import arrayTasks from './data/arrayTasks';
-import Tasks from './components/Tasks';
-import Footer from './components/Footer';
+import arrayTasks from '../data/arrayTasks';
+import Header from '../components/Header';
+import AddTaskForm from '../components/AddTaskForm';
+import Tasks from '../components/Tasks';
+import Footer from '../components/Footer';
 
 function App() {
   

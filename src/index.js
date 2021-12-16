@@ -1,17 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, Routes, Route } from 'react-router-dom';
-import App from './App';
-import About from './components/About';
-import Error from './components/Error';
+import AppRouter from './AppRouter';
+import { HashRouter } from 'react-router-dom';
+
 
 ReactDOM.render(
   <HashRouter>
-    <Routes>
-      <Route exact path="/" element = { <App/> }/>
-      <Route path="/about" element = { <About/> }/>
-      <Route path="*" element={ <Error/> }/>
-    </Routes>
+    <AppRouter />
   </HashRouter>,
   document.getElementById('root')
 );
