@@ -60,7 +60,7 @@ body {
   cursor: pointer;
 }
 
-.task.reminder { border-left: .1em solid green; }
+.task.reminder { border-left: .35em solid teal; }
 
 .task h3 {
   display: flex;

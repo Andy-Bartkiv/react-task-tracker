@@ -1,8 +1,11 @@
 import { MdDeleteForever } from 'react-icons/md'
 
-const Task = ({ task, deleteTask }) => {
+const Task = ({ task, deleteTask, toggleReminder }) => {
     return (
-        <div className='task'>
+        <div 
+            className={ `task ${task.reminder && 'reminder'}` }
+            onDoubleClick={ () => toggleReminder(task.id) }
+        >
             <h3>
                 { task.text } 
                 <MdDeleteForever style={{ color: 'orange'}} onClick={ () => deleteTask(task.id) }/>
