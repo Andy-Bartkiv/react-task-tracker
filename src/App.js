@@ -1,9 +1,10 @@
 import './App.css';
+import { useState } from 'react';
 import Header from './components/Header';
 import AddTaskForm from './components/AddTaskForm';
+import arrayTasks from './data/arrayTasks';
 import Tasks from './components/Tasks';
-import arrayTasks from './arrayTasks';
-import { useState } from 'react';
+import Footer from './components/Footer';
 
 function App() {
   
@@ -13,7 +14,6 @@ function App() {
   const addTask = (task) => {
     task.id = Date.now();
     setTasks([...tasks, task])
-    console.log(task);
   }
 
   const deleteTask = (id) => {
@@ -29,24 +29,22 @@ function App() {
   }
   return (
     <div className="App">
+
       <Header 
-        style={{ zIndex: 100 }}
         btnLabel={!showInput }
         onBtnClick={ () => setShowInput(!showInput) } 
       />
       <hr style = { {margin: '.5em 0', background: 'teal', border: 'none', height: '.05em'} }/>
 
-      {/* { (showInput) && <AddTaskForm addTask = { addTask } /> } */}
       <AddTaskForm show = { showInput } addTask = { addTask } />
 
-      { tasks.length > 0
-        ? <Tasks
-            tasks={ tasks }
-            deleteTask = { deleteTask }
-            toggleReminder = { toggleReminder }
-          />
-        : 'No Tasks to Display'
-      }
+      <Tasks
+        tasks = { tasks }
+        deleteTask = { deleteTask }
+        toggleReminder = { toggleReminder }
+      />
+      
+      <Footer />
 
     </div>
   );

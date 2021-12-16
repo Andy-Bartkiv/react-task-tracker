@@ -24,8 +24,7 @@ const AddTaskForm = ({ show, addTask }) => {
 
     return (
 		<AnimationContainer>
-            {
-                (show) &&
+            { (show) &&
             <AnimatedElement
                 timeout = { 500 }
                 classNames = "form"
